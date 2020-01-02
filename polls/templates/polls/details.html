@@ -1,0 +1,22 @@
+
+{% extends 'polls/base.html' %}
+
+
+
+{% block title %}Select your Choice{% endblock %}
+{% block content  %}
+<br>
+
+<h3>{{ question }}</h3>
+<form action="." method="post">
+{% csrf_token %}
+    {{ form.as_p }}
+    {% for choice in question.choice_set.all %}
+    <input type="radio" name="choice" id="choice{{ forloop.counter }}" value="{{ choice.id }}">
+    <label for="choice{{ forloop.counter }}">{{ choice.choice_text }}</label><br>
+{% endfor %}
+<input type="Submit" value="Submit">
+</form>
+
+
+{% endblock %}

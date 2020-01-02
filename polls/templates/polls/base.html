@@ -1,0 +1,36 @@
+{% extends 'polls/bootstrap.html' %}
+{% load bootstrap4 %}
+
+
+
+
+{% block bootstrap4_content %}
+
+    <div class="container">
+
+
+  <div class="position-relative overflow-hidden p-1 p-md-1 m-md-1 text-center bg-dark text-white">
+  <div class="col-md-5 p-lg-5 mx-auto my-5">
+    <h1 class="display-4 font-weight-normal " >Worlds Polling WebApp</h1>
+
+    <a class="btn btn-outline-secondary" href="#">Coming soon</a>
+  </div>
+  <div class="product-device shadow-sm d-none d-md-block"></div>
+  <div class="product-device product-device-2 shadow-sm d-none d-md-block"></div>
+</div>
+<h1>{% block title %}(no title){% endblock %}</h1>
+
+
+
+        {% autoescape off %}{% bootstrap_messages %}{% endautoescape %}
+
+        {% block content %}(no content){% endblock %}
+    </div>
+<footer class="footer mt-auto py-3">
+  <div class="container">
+    <span class="text-muted">My Polls App</span>
+  </div>
+</footer>
+{% endblock %}
+
+
