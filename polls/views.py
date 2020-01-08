@@ -29,16 +29,16 @@ class DetailView(generic.DetailView):
     template_name = 'polls/detail.html'
 
 
-class DetailFormClass(generic.FormView):
+class DetailFormClass(generic.View):
     template_name = "polls/details.html"
 
     def get(self, request, *args, **kwargs):
-        myquestion=Question.objects.get(id=kwargs['pk'])
+        myquestion = Question.objects.get(id=kwargs['pk'])
         # choice_form = ChoiceForm()
         # question_form=QuestionForm()
         #
         #
-        context = {"question" :myquestion}
+        context = {"question" : myquestion}
         return render(request, self.template_name,context)
 
     def post(self, request, *args, **kwargs):
